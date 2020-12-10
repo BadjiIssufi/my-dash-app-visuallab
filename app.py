@@ -14,7 +14,7 @@ USERNAME_PASSWORD_PAIRS = [
     ['USERNAME', 'PASSWORD'],['IssufiBadji', '0002']
 ]
 
-server = app.server
+server=app.server
 
 app = dash.Dash(__name__)
 auth = dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
@@ -127,5 +127,5 @@ def generate_chart(names, values):
     return fig
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
     
