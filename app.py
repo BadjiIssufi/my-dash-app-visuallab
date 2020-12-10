@@ -1,6 +1,5 @@
 import plotly.express as px
 import dash
-import dash_auth
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
@@ -10,14 +9,9 @@ from dash.dependencies import Input, Output
 df = pd.read_csv('dataset_Visuallab.csv')
 df_faixaEtaria = df.groupby(['idade']).sum()
 
-USERNAME_PASSWORD_PAIRS = [
-    ['USERNAME', 'PASSWORD'],['IssufiBadji', '0002'] ]
-
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
-auth = dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
 
 server=app.server
 
