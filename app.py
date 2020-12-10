@@ -13,7 +13,10 @@ df_faixaEtaria = df.groupby(['idade']).sum()
 USERNAME_PASSWORD_PAIRS = [
     ['USERNAME', 'PASSWORD'],['IssufiBadji', '0002'] ]
 
-app = dash.Dash(__name__)
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
 auth = dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
 
 server=app.server
@@ -67,7 +70,7 @@ app.layout = html.Div(
     html.P("Opção 01:"),
     dcc.Dropdown(
         id='names',
-        value='idade',
+        value='diagnostico_Saudavel',
         options=[{'value': x, 'label': x}
                  for x in ['diagnostico_Saudavel', 'diagnostico_doente', 'idade', 'data_exame']],
         clearable=False
@@ -75,7 +78,7 @@ app.layout = html.Div(
     html.P("Opção 02:"),
     dcc.Dropdown(
         id='values',
-        value='diagnostico_Saudavel',
+        value='cirugiaPlastico_DuasMama',
         options=[{'value': x, 'label': x}
                  for x in ['cirugiaPlastico_DuasMama','cirugiaPlastico_MamaDireita','cirugiaPlastico_MamaEsquerda', 'diagnostico_Saudavel']],
         clearable=False
@@ -86,7 +89,6 @@ app.layout = html.Div(
     ]
 )
 
-#######
 @app.callback(
     Output(component_id='fig_diagnostico', component_property='figure'),
     [Input(component_id='dd_diagnostico', component_property='value')]
