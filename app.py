@@ -11,14 +11,12 @@ df = pd.read_csv('dataset_Visuallab.csv')
 df_faixaEtaria = df.groupby(['idade']).sum()
 
 USERNAME_PASSWORD_PAIRS = [
-    ['USERNAME', 'PASSWORD'],['IssufiBadji', '0002']
-]
-
-server=app.server
+    ['USERNAME', 'PASSWORD'],['IssufiBadji', '0002'] ]
 
 app = dash.Dash(__name__)
 auth = dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
 
+server=app.server
 
 app.layout = html.Div(
     [
