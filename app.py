@@ -67,7 +67,7 @@ app.layout = html.Div(children=[
             id='fig_diagnostico',
         ),
         html.Br(),
-
+        html.Br(),
         dcc.Dropdown(
             id='dd_situacao',
             options=[
@@ -88,7 +88,7 @@ app.layout = html.Div(children=[
             id='fig_dd_situacao'
         ),
         html.Br(),
-
+        html.Br(),
         dcc.Checklist(
             id='dd_situacao1',
             options=[
@@ -106,7 +106,8 @@ app.layout = html.Div(children=[
         dcc.Graph(
             id='fig_dd_situacao1'
         ),
-
+       html.Br(),
+       html.Br(),
        html.P("Opção 01:"),
        dcc.Dropdown(
          id='names',
