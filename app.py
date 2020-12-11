@@ -124,7 +124,7 @@ app.layout = html.Div(children=[
         clearable=False
      ),
      html.Br(),
-     html.Div(children='Dash: A web application framework for Python', style={
+     html.Div(children='Opção01 versos Opção02', style={
         'textAlign': 'center',
         'color': colors['text']
      }),
